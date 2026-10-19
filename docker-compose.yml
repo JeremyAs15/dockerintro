@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  santa_fe:
+    build: ./students/steven_candela
+    container_name: svc-santa-fe
+    ports:
+      - "8080:8080"
+    environment:
+      - STUDENT_NAME=Steven
+      - BARRIO=Santa Fe
+    volumes:
+      - biblioteca-del-pueblo:/var/log/app
+    networks:
+      - red_santa_fe
+
+networks:
+  red_santa_fe:
+    driver: bridge
+
+volumes:
+  biblioteca-del-pueblo:
+    name: biblioteca-del-pueblo
+    external: true
