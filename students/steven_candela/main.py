@@ -32,7 +32,7 @@ async def log_requests(request: Request, call_next):
 
 @app.get("/")
 async def root():
-    message = f"Hey! I am {STUDENT} and I live in {BARRIO}"
+    message = f"Hola, I am {STUDENT} and I live in {BARRIO}"
     return Response(content=message, media_type="text/plain; charset=utf-8")
 
 
